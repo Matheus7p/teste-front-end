@@ -1,0 +1,7 @@
+@use "abstracts" as *;
+@use "base" as *;
+
+h1{
+    color: var(--clr-blue);
+    font-family: var(--ff-secondary);
+}

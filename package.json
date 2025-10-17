@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
+    "lint": "next lint",
     "test": "jest",
     "test:ci": "npm run lint && npm run test:coverage",
     "test:coverage": "jest --collect-coverage",
@@ -15,7 +15,8 @@
   "dependencies": {
     "next": "15.5.5",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "sass": "^1.93.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.1.0",

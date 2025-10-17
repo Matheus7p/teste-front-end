@@ -1,0 +1,19 @@
+@use "../abstracts" as *;
+
+:root {
+  --ff-primary: var(--font-poppins), sans-serif;
+  --ff-secondary: var(--font-outfit), sans-serif;
+  --ff-work: var(--font-work-sans), sans-serif;
+
+  @each $key, $value in $font-sizes {
+    --fs-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $font-weights {
+    --fw-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $colors {
+    --clr-#{$key}: #{$value};
+  }
+}
