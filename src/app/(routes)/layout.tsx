@@ -24,7 +24,11 @@ const workSans = Work_Sans({
 
 export const metadata: Metadata = {
   title: "Econverse",
-  description: "Ofertas imperdíveis em iPhones na Econverse. Confira nossa ampla gama de categorias, como moda, fitness e bebidas.",
+  description: "Ofertas imperdíveis em iPhones na Econverse. Confira nossa ampla gama de categorias, como Iphones entre outros.",
+  openGraph: {
+    siteName: "Econverse",
+    images: { url: "/images/og-img.png" },
+  },
 };
 
 export default function RootLayout ({
