@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   description: "Ofertas imperdíveis em iPhones na Econverse. Confira nossa ampla gama de categorias, como Iphones entre outros.",
   openGraph: {
     siteName: "Econverse",
-    images: { url: "/images/og-img.png" },
+    images: { url: "/images/og-img.jpg" },
   },
 };
 
