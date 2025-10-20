@@ -14,6 +14,7 @@ describe("Components: Divider", () => {
     const dividerElement = container.querySelector(".mock-divider-class");
 
     expect(dividerElement).toBeInTheDocument();
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     expect(dividerElement!.tagName).toBe("DIV");
   });
 });
