@@ -23,14 +23,14 @@ interface IHeaderNavProps {
 
 type ComponentsProps = PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>;
 
-export const categories: Category[] = [
+const categories: Category[] = [
   { title: "todas as categorias" },
   { title: "supermercado" },
   { title: "livros" },
   { title: "moda" },
   { title: "lançamentos" },
   { title: "ofertas do dia" },
-  { title: "assinatuta", icon: "CrownSimple" },
+  { title: "assinatura", icon: "CrownSimple" },
 ];
 
 
