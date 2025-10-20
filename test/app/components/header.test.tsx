@@ -1,22 +1,29 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import React from "react";
 
-import { HeaderTop, HeaderContent, HeaderNav, Header } from "@/app/components/header/header.component";
+import {
+  HeaderTop,
+  HeaderContent,
+  HeaderNav,
+  Header,
+} from "@/app/components/header/header.component";
 
 jest.mock("./header.module.scss", () => ({
   headerTop: "mock-header-top",
   headerContent: "mock-header-content",
+  nav: "mock-nav",
+  active: "mock-active",
 }));
 
 describe("Components: Header suite", () => {
-  
   it("should render Header component with its children", () => {
     // Arrange
-    render(<Header /> );
-    
+    render(<Header />);
+
     // Act
     const headerElement = screen.getByRole("banner");
-    
+
     // Assert
     expect(headerElement).toBeInTheDocument();
     expect(screen.getByAltText("Logo econverse")).toBeInTheDocument();
@@ -97,4 +104,54 @@ describe("Components: Header suite", () => {
     expect(headerTop).toBeInTheDocument();
     expect(headerContent).toBeInTheDocument();
   });
+
+  it("should call onSelect with the correct category when a category is clicked", async () => {
+    // Arrange
+    const mockOnSelect = jest.fn();
+    const categories = [
+      { title: "tecnologia" },
+      { title: "moda" },
+    ];
+
+    render(
+      <HeaderNav
+        categories={categories}
+        activeCategory="tecnologia"
+        onSelect={mockOnSelect}
+      />,
+    );
+
+    const user = userEvent.setup();
+
+    // Act
+    const sportLink = screen.getByText("moda");
+    await user.click(sportLink);
+
+    // Assert
+    expect(mockOnSelect).toHaveBeenCalledTimes(1);
+    expect(mockOnSelect).toHaveBeenCalledWith("moda");
+  });
+
+  it("should add active class to the active category", () => {
+    // Arrange
+    const categories = [
+      { title: "tecnologia" },
+      { title: "moda" },
+    ];
+
+    render(
+      <HeaderNav
+        categories={categories}
+        activeCategory="tecnologia"
+        onSelect={jest.fn()}
+      />,
+    );
+
+    // Act
+    const activeLink = screen.getByText("tecnologia");
+
+    // Assert
+    expect(activeLink).toHaveClass("mock-active");
+  });
+
 });
