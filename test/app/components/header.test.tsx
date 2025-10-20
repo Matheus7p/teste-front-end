@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import React from "react";
 
-import { HeaderTop, HeaderContent, HeaderNav } from "@/app/components/header/header.component";
+import { HeaderTop, HeaderContent, HeaderNav, Header } from "@/app/components/header/header.component";
 
 jest.mock("./header.module.scss", () => ({
   headerTop: "mock-header-top",
@@ -10,6 +10,18 @@ jest.mock("./header.module.scss", () => ({
 
 describe("Components: Header suite", () => {
   
+  it("should render Header component with its children", () => {
+    // Arrange
+    render(<Header /> );
+    
+    // Act
+    const headerElement = screen.getByRole("banner");
+    
+    // Assert
+    expect(headerElement).toBeInTheDocument();
+    expect(screen.getByAltText("Logo econverse")).toBeInTheDocument();
+  });
+
   it("should render HeaderTop component with children and styles", () => {
     // Arrange
     const childText = "Child of HeaderTop";
@@ -64,5 +76,25 @@ describe("Components: Header suite", () => {
     expect(navElement).toBeInTheDocument();
     expect(navElement.tagName).toBe("NAV");
     expect(screen.getByText(childText)).toBeInTheDocument();
+  });
+
+  it("should render HeaderTop, HeaderContent, and HeaderNav inside Header", () => {
+    // Arrange
+    render(<Header />);
+
+    // Act
+    const headerElement = screen.getByRole("banner");
+    const navElement = screen.getByRole("navigation");
+
+    // Assert
+    expect(headerElement).toBeInTheDocument();
+    expect(navElement).toBeInTheDocument();
+    expect(screen.getByAltText("Logo econverse")).toBeInTheDocument();
+
+    const headerTop = headerElement.querySelector(".mock-header-top");
+    const headerContent = headerElement.querySelector(".mock-header-content");
+
+    expect(headerTop).toBeInTheDocument();
+    expect(headerContent).toBeInTheDocument();
   });
 });
