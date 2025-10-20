@@ -12,7 +12,7 @@ export const Button : React.FC<IButtonProps> = ({ variant = "default", className
     <button 
       className={classNames(
         styles.button,
-        styles[`input--${variant}`], className)} {...props}>
+        styles[`button--${variant}`], className)} {...props}>
       {children}
     </button>
   );
