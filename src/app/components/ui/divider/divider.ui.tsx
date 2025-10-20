@@ -1,8 +1,13 @@
+import classNames from "classnames";
 import { ReactElement } from "react";
 
 import styles from "./divider.module.scss";
 
-export const Divider = (): ReactElement => {
-  return ( <div className={styles.divider}></div> );
+interface IDividerProps {
+  variant?: string;
+}
+
+export const Divider = ({ variant = "default" }: IDividerProps): ReactElement => {
+  return ( <hr className={classNames(styles.divider, styles[`divider--${variant}`])}></hr> );
 };
  
