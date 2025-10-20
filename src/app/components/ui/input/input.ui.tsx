@@ -4,7 +4,7 @@ import React from "react";
 import styles from "./input.module.scss"; 
 
 interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  variant?: "default";
+  variant?: string;
   className?: string
 }
 
