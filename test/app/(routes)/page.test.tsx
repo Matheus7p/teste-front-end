@@ -4,8 +4,16 @@ import Home from "@/app/(routes)/page";
 
 
 describe("Page", () => {
-  it("should display the text \"Teste Econverse\"", () => {
+  it("should render the hero section with its title", () => {
+    // Arrange
     render(<Home />);
-    expect(screen.getByText("Teste Econverse")).toBeInTheDocument();
+
+    // Act
+    const headingElement = screen.getByRole("heading", {
+      name: /Venha conhecer nossas promoções/i,
+    });
+
+    // Assert
+    expect(headingElement).toBeInTheDocument();
   });
 });
