@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 
+import { CategoriesDisplayToHome } from "@/app/components/categories-display/categories-display.component";
 import { HeroSection } from "@/app/components/heroSection/hero-section.component";
 import { Button } from "@/app/components/ui/button/button.ui";
 
@@ -16,6 +17,7 @@ export default function Home (): ReactElement {
           </Button>
         </div>
       </HeroSection>
+      <CategoriesDisplayToHome />
     </main>
   );
 }
