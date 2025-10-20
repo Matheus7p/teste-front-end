@@ -4,6 +4,8 @@ import "@/app/sass/style.scss";
 import { Poppins, Outfit, Work_Sans } from "next/font/google";
 import { ReactElement } from "react";
 
+import { Header } from "@/app/components/header/header.component";
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight : ["200", "300", "400", "500", "600", "700", "800", "900"],
@@ -24,7 +26,11 @@ const workSans = Work_Sans({
 
 export const metadata: Metadata = {
   title: "Econverse",
-  description: "Ofertas imperdíveis em iPhones na Econverse. Confira nossa ampla gama de categorias, como moda, fitness e bebidas.",
+  description: "Ofertas imperdíveis em iPhones na Econverse. Confira nossa ampla gama de categorias, como Iphones entre outros.",
+  openGraph: {
+    siteName: "Econverse",
+    images: { url: "/images/og-img.jpg" },
+  },
 };
 
 export default function RootLayout ({
@@ -35,6 +41,7 @@ export default function RootLayout ({
   return (
     <html lang="en" className={`${poppins.variable} ${outfit.variable} ${workSans.variable}`}>
       <body>
+        <Header />
         {children}
       </body>
     </html>
