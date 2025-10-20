@@ -1,0 +1,25 @@
+.button {
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+
+  &--default{
+    background-color: transparent;
+    border: none;
+  }
+
+  &--yellow {
+    width:12.875rem; 
+    height: 3.125rem;
+    background-color: var(--clr-yellow);
+    border-radius: 5px;
+    color: var(--clr-dark-blue-purple);
+    font-weight: var(--fw-semibold);
+    font-size: var(--fs-400);
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+  
+}
