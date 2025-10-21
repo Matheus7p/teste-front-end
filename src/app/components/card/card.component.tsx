@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { PropsWithChildren } from "react";
+import React, { ComponentPropsWithoutRef, PropsWithChildren } from "react";
 
 
 import { Button } from "@/app/components/ui/button/button.ui";
@@ -16,14 +16,14 @@ interface ICardImage {
   width: number;
   height: number;
 }
-interface ICard {
-  children: React.ReactNode;
+interface ICard extends ComponentPropsWithoutRef<"div">{
+  children?: React.ReactNode;
   className: string;
 
 }
 
-export const Card = ({ children, className }: ICard): React.ReactElement => {
-  return (<div className={className}>{children}</div>);
+export const Card = ({ children, className, ...props }: ICard): React.ReactElement => {
+  return (<div className={className} {...props}>{children}</div>);
 };
 
 export const CardImage = ({ src, alt, width, height }: ICardImage): React.ReactElement => {
