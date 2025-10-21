@@ -1,0 +1,55 @@
+.brandsGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+  margin-top: 90px;
+  
+  h3 {
+    color: var(--clr-blue);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-700);
+  }
+}
+
+.brandsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+.brandItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 211px;
+  height: 211px;
+  border-radius: 105.5px;
+  background-color: var(--clr-white);
+  box-shadow: 0px 7px 20px 0px rgba(0, 0, 0, 0.13);
+  transition: all 100ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .brandsGroup {
+    gap: 16px;
+  }
+
+  .brandsList {
+    gap: 16px;
+  }
+}
