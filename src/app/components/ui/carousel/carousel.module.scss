@@ -1,0 +1,71 @@
+.embla {
+  position: relative;
+  width: 100%;
+  margin-inline: auto;
+
+  .embla__viewport {
+    padding: 30px;
+    width: 95%;
+    margin-inline: auto;
+    overflow: hidden;
+  }
+
+  .embla__container {
+    display: flex;
+    gap: 18px;
+  }
+
+  .embla__slide {
+    flex: 0 0 calc(25% - 1.125rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .embla__next,
+  .embla__prev {
+    background-color: var(--clr-light-gray);
+    color: var(--clr-black);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    z-index: 2;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover,
+    &:focus {
+      background-color: var(--clr-light-gray-2);
+    }
+  }
+
+  .embla__prev {
+    left: -2rem;
+  }
+
+  .embla__next {
+    right: -2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .embla__slide {
+    flex: 0 0 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .embla__slide {
+    flex: 0 0 100%;
+  }
+
+  .embla__next,
+  .embla__prev {
+    display: none;
+  }
+}
