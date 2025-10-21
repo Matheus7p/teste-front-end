@@ -1,0 +1,61 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; 
+}
+
+.modalOverlay::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--clr-black);
+  opacity: 54%; 
+}
+
+.modalContent {
+  background-color:var(--clr-white); 
+  width: 769px;
+  height: 299.26px;
+  padding: 20px;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: none;
+}
+
+.closeButton {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: none;
+  border: none;
+  color: var(--clr-gray-medium);
+  font-weight: var(--fw-normal);
+  font-size: var(--fs-500);;
+  cursor: pointer;
+}
+
+
+@media (max-width: 769px) {
+  .modalContent {
+    width: 90%;  
+    height: auto; 
+    max-width: 400px; 
+    padding: 15px;  
+  }
+
+  .closeButton {
+    top: 15px;
+    right: 15px;
+    font-size: 18px; 
+  }
+}
