@@ -5,9 +5,7 @@ import Home from "@/app/(routes)/page";
 import { getProductById } from "@/app/actions/product.actions";
 
 
-import { Props } from "./props";
-
-async function generateMetadata ({ params}: Props ): Promise<Metadata> {
+async function generateMetadata ({ params}: { params: { id: string}}): Promise<Metadata> {
   const product = await getProductById(params.id);
 
   if(!product) return {};
