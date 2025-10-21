@@ -6,7 +6,17 @@ const nextConfig: NextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'sass')],
     prependeData: `@import "abstracts/_variables.scss";`
-  }
+  },
+    images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'app.econverse.com.br',
+        pathname: '/teste-front-end/junior/tecnologia/fotos-produtos/**',
+      },
+    ],
+  },
+
 };
 
 export default nextConfig;

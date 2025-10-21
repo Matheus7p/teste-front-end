@@ -15,6 +15,6 @@ describe("Components: Divider", () => {
 
     expect(dividerElement).toBeInTheDocument();
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    expect(dividerElement!.tagName).toBe("DIV");
+    expect(dividerElement!.tagName).toBe("HR");
   });
 });

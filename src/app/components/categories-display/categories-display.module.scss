@@ -1,25 +1,25 @@
 .categoriesDisplayToHome {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
   height: auto;
   margin: 39px auto;
+  gap: 1.5rem;
 
   .categoryItem {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.25rem;
-
     div {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 6rem;
-      height: 6rem;
+      width: 7rem; 
+      height: 7rem;
       background-color: var(--clr-light-gray);
       box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.13);
       border-radius: 8px;
@@ -27,8 +27,8 @@
       transition: background-color 0.3s, color 0.3s;
 
       svg {
-        width: 40px;
-        height: 80px;
+        width: auto;
+        height: auto;
         color: var(--clr-black);
         transition: color 0.3s;
       }
@@ -72,11 +72,11 @@
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .categoriesDisplayToHome {
-    justify-content: center;
     gap: 2.625rem;
     width: 1160px;
+    max-width: 100%;
 
     .categoryItem {
       div {

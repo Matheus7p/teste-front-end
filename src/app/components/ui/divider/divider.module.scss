@@ -1,4 +1,18 @@
-.divider{
+.divider {
   width: 100%;
-  border: 1px solid var(--clr-light-gray);
+  border: none;
+  border-bottom: 1px solid var(--clr-light-gray);
+}
+
+.divider--relatedProduct {
+  max-width: 360px;
+  flex-grow: 1;
+  border-bottom: 1px solid var(--clr-neutral-gray);
+  display: none;
+}
+
+@media (min-width: 768px) {  
+  .divider--relatedProduct{
+    display: block;
+  }
 }
