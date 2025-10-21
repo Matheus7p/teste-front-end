@@ -18,6 +18,16 @@
     font-size: var(--fs-400);
   }
 
+   &--blue  {
+    background-color: var(--clr-blue);
+    height: 44px;
+    width: 275.85px;
+    border-radius: 4px;
+    color: var(--clr-white );
+    font-weight: var(--fw-bold);
+    font-size: var(--fw-300);
+  }
+
   &:hover {
     opacity: 0.9;
   }
