@@ -1,10 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import React, { PropsWithChildren } from "react";
 
 
 import { Button } from "@/app/components/ui/button/button.ui";
 import { IProduct } from "@/app/types/products.type";
 import { formatPriceToBRL } from "@/utils/price-format.utils";
+import { slugify } from "@/utils/slugify.util";
 
 import styles from "./card.module.scss";
 
@@ -37,7 +39,7 @@ export const CardButton = ({ children }: PropsWithChildren): React.ReactElement 
 };
 
 export const CardProduct = ({ productName, price, descriptionShort, photo}: IProduct): React.ReactElement => {
-
+  const id = slugify(productName);
   return (
     <Card className={styles.productCard as string}>
       <CardImage src={photo} alt={productName} width={278.1} height={228}/>
@@ -57,7 +59,9 @@ export const CardProduct = ({ productName, price, descriptionShort, photo}: IPro
         <p>Frete grátis</p>
       </CardContent>
       <CardButton>
-        <Button variant="blue">COMPRAR</Button>
+        <Link href={`/product/${id}`}>
+          <Button variant="blue">COMPRAR</Button>
+        </Link>
       </CardButton>
     </Card>);
 };
