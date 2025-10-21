@@ -5,10 +5,11 @@ import { getProductById } from "@/app/actions/product.actions";
 import { ModalProduct } from "@/app/components/modal-product/modal-product.component";
 import { Modal } from "@/app/components/ui/modal/modal.ui";
 
-import { Props } from "./props";
+import { ProductPageProps } from "./props";
 
-export default async function PageProductModal ({ params }: Props): Promise<JSX.Element> {
-  const product = await getProductById(params.id);
+export default async function PageProductModal ({ params }: ProductPageProps): Promise<JSX.Element> {
+  const { id } = await params;
+  const product = await getProductById(id);
   if (!product) notFound();
 
   return (

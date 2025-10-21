@@ -4,12 +4,14 @@ import { ReactNode } from "react";
 import Home from "@/app/(routes)/page";
 import { getProductById } from "@/app/actions/product.actions";
 
+import { ProductLayoutProps } from "./props";
 
-async function generateMetadata ({ params}: { params: { id: string}}): Promise<Metadata> {
-  const product = await getProductById(params.id);
+async function generateMetadata ({ params }: ProductLayoutProps): Promise<Metadata> {
+  const { id } = await params;
+  const product = await getProductById(id);
 
-  if(!product) return {};
-  
+  if (!product) return {};
+
   return {
     title: `Econverse - ${product.productName}`,
     description: `${product.descriptionShort}`,
@@ -19,12 +21,9 @@ async function generateMetadata ({ params}: { params: { id: string}}): Promise<M
       description: `${product.descriptionShort}`,
     },
   };
-
 }
 
-export { generateMetadata };
-
-export default function ProductModalLayout ({ children }: Readonly<{ children: React.ReactNode }>): ReactNode {
+function ProductModalLayout ({ children }: Readonly<{ children: React.ReactNode }>): ReactNode {
   return (
     <>
       <Home />
@@ -32,3 +31,6 @@ export default function ProductModalLayout ({ children }: Readonly<{ children: R
     </>
   );
 }
+
+export { generateMetadata };
+export default ProductModalLayout;
