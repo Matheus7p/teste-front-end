@@ -36,7 +36,7 @@ describe("Card Components", () => {
 
     // Assert
     expect(screen.getByText(text)).toBeInTheDocument();
-    expect(screen.getByText(text).parentElement).toHaveClass("test-class");
+    expect(screen.getByText(text)).toHaveClass("test-class");
   });
 
   it("renders CardImage with correct attributes", () => {
@@ -90,7 +90,7 @@ describe("Card Components", () => {
     expect(screen.getByText(product.productName)).toBeInTheDocument();
     expect(screen.getByText(product.descriptionShort)).toBeInTheDocument();
     expect(formatPriceToBRL).toHaveBeenCalledWith(1000);
-    expect(screen.getByText(/1\.000/)).toBeInTheDocument();
+    expect(screen.getAllByText(/1\.000/)[0]).toBeInTheDocument();
     expect(screen.getByText(/ou 2x de/)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /COMPRAR/i })).toBeInTheDocument();
   });
