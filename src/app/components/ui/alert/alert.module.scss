@@ -1,13 +1,16 @@
+@use "sass:map";
+
 @keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: translate(-50%, -100%);
+    transform: translate(0, -100%);
   }
   to {
     opacity: 1;
-    transform: translate(-50%, 0);
+    transform: translate(0, 0);
   }
 }
+
 
 $variants: (
   error: (
@@ -21,7 +24,7 @@ $variants: (
 .alert {
   position: fixed;
   top: 2rem;
-  left: 50%;
+  margin-inline: auto;
   z-index: 9999;
   padding: 0.9rem 1.5rem;
   border-radius: 5px;
@@ -32,6 +35,7 @@ $variants: (
   min-width: 320px;
   text-align: center;  
   border: none;
+  
   animation: fadeInDown 0.5s ease-out forwards;
 
   &__content {
@@ -51,7 +55,7 @@ $variants: (
 
 @each $name, $colors in $variants {
   .alert--#{$name} {
-    background-color: map-get($colors, bg);
+    background-color: map.get($colors, bg);
   }
 }
 
