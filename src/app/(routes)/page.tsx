@@ -5,7 +5,9 @@ import { getProduct } from "@/app/actions/product.actions";
 import { Brands } from "@/app/components/brands/brands.component";
 import { CardProduct } from "@/app/components/card/card.component";
 import { CategoriesDisplayToHome } from "@/app/components/categories-display/categories-display.component";
+import { Footer } from "@/app/components/footer/footer.component";
 import { HeroSection } from "@/app/components/heroSection/hero-section.component";
+import { Newsletter } from "@/app/components/news-lestter/news-letter.component";
 import { Partner } from "@/app/components/partner/partner.component";
 import { TabSelectorRelatedProduct } from "@/app/components/tab-selector/tab-selector.component";
 import { Alert } from "@/app/components/ui/alert/alert.ui";
@@ -110,7 +112,9 @@ export default async function Home (): Promise<JSX.Element> {
             )}
         </div>
       </section>
-          
+      
+      <Newsletter />
+      <Footer />
     </main> 
   );
 }
