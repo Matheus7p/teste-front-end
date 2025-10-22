@@ -3,47 +3,51 @@
   max-width: 1200px;
   margin-inline: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 90px;
-  margin-bottom: 90px;
-  gap: 13px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  gap: 20px;
 
   .partner { 
-    width: 634px;
+    width: 100%;
+    max-width: 400px;
     height: 350px;
     background-image: url("/images/partner.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 20px;
     padding-top: 89px;
   
     div {
-      object-fit: cover;
       height: 261px;
       background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0) 100%);
       border-bottom-right-radius: 20px;
       border-bottom-left-radius: 20px;
-      padding-left: 44.18px;
-      padding-top: 25px;
+      padding: 25px 20px 20px 20px;
+      display: flex;
+      flex-direction: column;
       
-      h5{
-        font-size: var(--fs-800);
+      h5 {
+        font-size: var(--fs-700);
         font-weight: var(--fw-bold);
         color: var(--clr-white);
         margin-bottom: 8px;
-        height: 60px;
+        min-height: 60px;
       }
 
-      p{
-        font-size: var(--fs-450);
+      p {
+        font-size: var(--fs-400);
         font-weight: var(--fw-light);
         color: var(--clr-white);
-        width: 199px;
-        height: 48px;
+        max-width: 199px;
+        min-height: 48px;
         margin-bottom: 32px;
       }
 
-      button{
+      button {
         width: 144.69px;
         height: 48px;
         font-size: var(--fs-400);
@@ -52,15 +56,31 @@
     }
   }
   
-  @media (max-width: 769px) {
-    flex-direction: column;
-    height: auto; 
-    padding: 20px; 
-    gap: 10px;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    gap: 13px;
 
-    & > * {
-      width: 90%; 
-      max-width: 400px; 
+    .partner {
+      max-width: 634px;
+      width: 634px;
+
+      div {
+        padding-left: 44.18px;
+        padding-top: 25px;
+
+        h5 {
+          font-size: var(--fs-800);
+          height: 60px;
+        }
+
+        p {
+          font-size: var(--fs-450);
+          width: 199px;
+          height: 48px;
+        }
+      }
     }
   }
 }

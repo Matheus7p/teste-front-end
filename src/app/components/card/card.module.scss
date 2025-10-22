@@ -1,14 +1,19 @@
 .productCard {
   padding: 17px 13.51px 16px 12.39px;
-  width: 304px;
-  height: 500px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  min-height: 450px;
   border-radius: 10px;
   box-shadow: 0 3px 19px 0 rgba(0, 0, 0, 0.22);
 
   img {
-    width: 278.1px;
+    width: 100%;
+    max-width: 278.1px;
+    height: auto;
+    aspect-ratio: 278.1 / 228;
+    object-fit: cover;
     margin-top: 13px;
-    height: 228px;
   }
 
   .productName {
@@ -16,20 +21,20 @@
     color: var(--clr-gray-dark);
     font-weight: var(--fw-light);
     line-height: 100%;
-    margin-top: 0;  
+    margin-top: 12px;
   }
 
   .priceDiscounted {
     font-size: var(--fs-500);
     color: var(--clr-gray-dark);
     font-weight: var(--fw-bold);
-    margin-top: 12px; 
+    margin-top: 12px;
 
     span {
       font-size: var(--fs-400);
       color: var(--clr-medium-gray);
       font-weight: var(--fw-regular);
-      margin-bottom: 2px; 
+      margin-bottom: 2px;
     }
   }
 
@@ -37,21 +42,24 @@
     font-size: var(--fs-200);
     color: var(--clr-gray-dark);
     font-weight: var(--fw-regular);
-    margin-top: 2px; 
+    margin-top: 2px;
   }
 
   p {
     font-size: var(--fs-200);
     color: var(--clr-blue);
     font-weight: var(--fw-regular);
-    margin-top: 7px;  
-    margin-bottom: 12px;  
+    margin-top: 7px;
+    margin-bottom: 12px;
   }
-}
 
-@media (max-width: 768px) {
-  .productCard {
-    width: 100%; 
-    max-width: 500px; 
+  @media (min-width: 768px) {
+    width: 304px;
+    height: 520px;
+
+    img {
+      width: 278.1px;
+      height: 228px;
+    }
   }
 }
