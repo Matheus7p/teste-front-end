@@ -1,4 +1,4 @@
-import { slugify } from "@/utils/slugify.util";
+import { slugify } from "@/app/utils/slugify.util";
 
 describe("slugify", () => {
   it("should convert text to lowercase and replace spaces with hyphens", () => {

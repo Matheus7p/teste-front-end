@@ -1,7 +1,7 @@
 import { getProduct, getProductById } from "@/app/actions/product.actions";
-import { slugify } from "@/utils/slugify.util";
+import { slugify } from "@/app/utils/slugify.util";
 
-jest.mock("@/utils/slugify.util", () => ({
+jest.mock("@/app/utils/slugify.util", () => ({
   slugify: jest.fn(),
 }));
 

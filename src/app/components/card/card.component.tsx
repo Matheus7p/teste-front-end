@@ -5,10 +5,11 @@ import React, { ComponentPropsWithoutRef, PropsWithChildren } from "react";
 
 import { Button } from "@/app/components/ui/button/button.ui";
 import { IProduct } from "@/app/types/products.type";
-import { formatPriceToBRL } from "@/utils/price-format.utils";
-import { slugify } from "@/utils/slugify.util";
+import { formatPriceToBRL } from "@/app/utils/price-format.utils";
+import { slugify } from "@/app/utils/slugify.util";
 
 import styles from "./card.module.scss";
+
 
 interface ICardImage {
   src: string;

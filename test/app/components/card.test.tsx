@@ -2,8 +2,7 @@ import { render, screen } from "@testing-library/react";
 import React from "react";
 
 import { Card, CardImage, CardContent, CardButton, CardProduct } from "@/app/components/card/card.component";
-import { formatPriceToBRL } from "@/utils/price-format.utils";
-
+import { formatPriceToBRL } from "@/app/utils/price-format.utils";
 
 jest.mock("next/image", () => ({
   __esModule: true,
@@ -18,7 +17,7 @@ jest.mock("@/app/components/ui/button/button.ui", () => ({
   ),
 }));
 
-jest.mock("@/utils/price-format.utils", () => ({
+jest.mock("@/app/utils/price-format.utils", () => ({
   formatPriceToBRL: jest.fn((value: number) => value.toLocaleString("pt-BR")),
 }));
 
