@@ -1,0 +1,61 @@
+@use "sass:map";
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate(0, -100%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+
+$variants: (
+  error: (
+    bg: var(--clr-red)
+  ),
+  success: (
+    bg: var(--clr-green)
+  ),
+);
+
+.alert {
+  position: fixed;
+  top: 2rem;
+  margin-inline: auto;
+  z-index: 9999;
+  padding: 0.9rem 1.5rem;
+  border-radius: 5px;
+  color:var(--clr-white);
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 320px;
+  text-align: center;  
+  border: none;
+  
+  animation: fadeInDown 0.5s ease-out forwards;
+
+  &__content {
+    p {
+      margin: 0;
+      line-height: 1.4;
+    }
+  }
+
+  &__title {
+    margin: 0 0 0.25rem 0;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--clr-white); 
+  }
+}
+
+@each $name, $colors in $variants {
+  .alert--#{$name} {
+    background-color: map.get($colors, bg);
+  }
+}
+

@@ -4,6 +4,8 @@ import "@/app/sass/style.scss";
 import { Poppins, Outfit, Work_Sans } from "next/font/google";
 import { ReactElement } from "react";
 
+import { Header } from "@/app/components/header/header.component";
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight : ["200", "300", "400", "500", "600", "700", "800", "900"],
@@ -39,6 +41,7 @@ export default function RootLayout ({
   return (
     <html lang="en" className={`${poppins.variable} ${outfit.variable} ${workSans.variable}`}>
       <body>
+        <Header />
         {children}
       </body>
     </html>

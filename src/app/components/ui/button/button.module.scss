@@ -1,0 +1,35 @@
+.button {
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+
+  &--default{
+    background-color: transparent;
+    border: none;
+  }
+
+  &--yellow {
+    width:12.875rem; 
+    height: 3.125rem;
+    background-color: var(--clr-yellow);
+    border-radius: 5px;
+    color: var(--clr-dark-blue-purple);
+    font-weight: var(--fw-semibold);
+    font-size: var(--fs-400);
+  }
+
+   &--blue  {
+    background-color: var(--clr-blue);
+    height: 44px;
+    width: 275.85px;
+    border-radius: 4px;
+    color: var(--clr-white );
+    font-weight: var(--fw-bold);
+    font-size: var(--fw-300);
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+  
+}

@@ -16,7 +16,8 @@ const config = {
     '!src/**/*.type.ts',
     '!src/**/**.contract.ts',
     '!src/**/**.response.ts',
-    '!src/**/**.enum.ts'
+    '!src/**/**.enum.ts',
+    '!src/**/**props.tsx'
   ],
 
   coverageThreshold: {
@@ -29,6 +30,10 @@ const config = {
   },
 
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+    moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '\\.(css|scss|sass)$': 'identity-obj-proxy'
+  },
 
 };
 
