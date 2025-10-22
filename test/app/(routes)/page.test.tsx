@@ -37,6 +37,14 @@ jest.mock("@/app/components/card/card.component", () => ({
   ),
 }));
 
+jest.mock("@/app/components/partner/partner.component", () => ({
+  Partner: () => <div data-testid="partner">Partner Mock</div>,
+}));
+
+jest.mock("@/app/components/brands/brands.component", () => ({
+  Brands: () => <div data-testid="brands">Brands Mock</div>,
+}));
+
 describe("Home Page", () => {
   beforeEach(() => {
     jest.clearAllMocks();
@@ -62,10 +70,11 @@ describe("Home Page", () => {
     render(await Home());
 
     // Act
-    const relatedHeading = await screen.findByRole("heading", { name: /Produtos Relacionados/i });
+    const relatedHeadings = await screen.findAllByRole("heading", { name: /Produtos Relacionados/i });
 
     // Assert
-    expect(relatedHeading).toBeInTheDocument();
+    expect(relatedHeadings).toHaveLength(3);
+    expect(relatedHeadings[0]).toBeInTheDocument();
   });
 
   it("should render categories and tab selector", async () => {
@@ -79,5 +88,17 @@ describe("Home Page", () => {
     // Assert
     expect(categories).toBeInTheDocument();
     expect(tabs).toBeInTheDocument();
+  });
+
+  it("should render the Partner component", async () => {
+    // Arrange
+    render(await Home());
+
+    // Act
+    const partners = screen.getAllByTestId("partner");
+
+    // Assert
+    expect(partners).toHaveLength(2);
+    expect(partners[0]).toBeInTheDocument();
   });
 });
