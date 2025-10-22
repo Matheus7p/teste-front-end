@@ -20,7 +20,20 @@
       white-space: nowrap;
     }
   }
+
 }
+
+.see_all{
+    color: var(--clw-gray-dark);
+    font-size: var(--fs-350);
+    font-weight: var(--fs-bold);
+    text-align: center;
+
+    &:hover{
+      scale: 1.1;
+      cursor: pointer;
+    }
+  }
 
 .productsListContainer {
   width: 100%;
