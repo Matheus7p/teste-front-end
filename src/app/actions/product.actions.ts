@@ -1,5 +1,5 @@
 import { IProduct } from "@/app/types/products.type";
-import { slugify } from "@/utils/slugify.util";
+import { slugify } from "@/app/utils/slugify.util";
 
 interface IApiResponse {
   success: boolean;

@@ -17,7 +17,8 @@ const config = {
     '!src/**/**.contract.ts',
     '!src/**/**.response.ts',
     '!src/**/**.enum.ts',
-    '!src/**/**props.tsx'
+    '!src/**/**props.tsx',
+    '!src/**/**-schema.ts'
   ],
 
   coverageThreshold: {

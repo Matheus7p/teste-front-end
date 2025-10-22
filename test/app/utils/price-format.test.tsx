@@ -1,4 +1,4 @@
-import { formatPriceToBRL } from "@/utils/price-format.utils";
+import { formatPriceToBRL } from "@/app/utils/price-format.utils";
 
 describe("formatPriceToBRL", () => {
   it("formats number to BRL locale string correctly", () => {
