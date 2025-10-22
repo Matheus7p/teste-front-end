@@ -3,10 +3,10 @@ import React from "react";
 
 import { ModalProduct } from "@/app/components/modal-product/modal-product.component";
 import { useQuantity } from "@/app/hooks/useQuantity";
-import { formatPriceToBRL } from "@/utils/price-format.utils";
+import { formatPriceToBRL } from "@/app/utils/price-format.utils";
 
 jest.mock("@/app/hooks/useQuantity");
-jest.mock("@/utils/price-format.utils");
+jest.mock("@/app/utils/price-format.utils");
 
 describe("ModalProduct", () => {
   const mockProduct = {

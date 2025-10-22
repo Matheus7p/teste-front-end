@@ -6,8 +6,7 @@ import { Button } from "@/app/components/ui/button/button.ui";
 import { Icon } from "@/app/components/ui/icon/icon.ui";
 import { useQuantity } from "@/app/hooks/useQuantity";
 import { IProduct } from "@/app/types/products.type";
-import { formatPriceToBRL } from "@/utils/price-format.utils";
-
+import { formatPriceToBRL } from "@/app/utils/price-format.utils";
 
 import styles from "./modal-product.module.scss";
 
